@@ -1,0 +1,74 @@
+@prefix ex: <http://example.org/fruechte/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+ex:Fruechte a skos:ConceptScheme ; 
+dct:title "Früchte"@de, "fruits"@en ;
+dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+skos:definition "Eine Frucht ist ein Pflanzenteil, das meist Samen zur Fortpflanzung der Pflanze enthält, oft umschlossen von Fruchtfleisch. Manche Früchte sind für Menschen genießbar."@de;
+skos:hasTopConcept ex:Obst, ex:NichtessbareFruechte.
+
+ex:Obst a skos:Concept; 
+skos:prefLabel "Obst"@de, "edible fruits"@en;
+skos:definition "Essbare Früchte"@de;
+skos:narrower ex:Zitrus, ex:Beerenobst, ex:Kernobst;
+skos:inScheme ex:Fruechte;
+skos:topConceptOf ex:Fruechte
+.
+
+ex:Zitrus a skos:Concept ;
+skos:prefLabel "Zitrusfrucht"@de, "citrus fruit"@en;
+skos:altLabel "Südfrucht"@de;
+skos:definition "Frucht aus der Familie der Rautengewächse (Rutaceae)."@de;
+skos:narrower ex:Orange, ex:Mandarine;
+skos:inScheme ex:Fruechte;
+.
+
+ex:Orange a skos:Concept;
+skos:prefLabel "Orange"@de, "orange"@en;
+skos:altLabel "Apfelsine"@de;
+skos:inScheme ex:Fruechte.
+
+ex:Mandarine a skos:Concept;
+skos:prefLabel "Mandarine"@de, "mandarine"@en ;
+skos:definition "Sieht ähnlich aus wie eine Orange, ist aber kleiner und weicher."@de;
+skos:inScheme ex:Fruechte.
+
+ex:Beerenobst a skos:Concept;
+skos:prefLabel "Beerenobst"@de, "berries"@en;
+skos:altLabel "Beeren"@de;
+skos:definition "Weiche, kleine, rundliche Früchte"@de;
+skos:example "Brombeere, Himbeere, Stachelbeere, Preiselbeere."@de;
+skos:inScheme ex:Fruechte;
+skos:narrower ex:Himbeere.
+
+ex:Himbeere a skos:Concept;
+skos:prefLabel "Himbeere"@de, "raspberry"@en;
+skos:definition "Rote, kleine Frucht mit vielen kleinen Unterbeeren."@de;
+skos:inScheme ex:Fruechte;
+skos:broader ex:Beerenobst.
+
+ex:Kernobst a skos:Concept;
+skos:narrower ex:Apfel, ex:Birne;
+skos:inScheme ex:Fruechte;
+skos:prefLabel "Kernobst"@de, "stone fruit"@en.
+
+ex:Apfel a skos:Concept ;
+skos:prefLabel "Apfel"@de, "apple"@en, "pomme"@fr;
+skos:definition "Eine rundliche Frucht, gehört zu dem Kernobst. In Kunst und Religion gern verwendet, z.B. als Zankapfel, Paradiesapfel und Motiv in Stillleben."@de;
+skos:inScheme ex:Fruechte;
+skos:broader ex:Kernobst.
+
+ex:Birne a skos:Concept;
+skos:prefLabel "Birne"@de, "pear"@en, "poire"@fr;
+skos:inScheme ex:Fruechte.
+
+ex:NichtessbareFruechte a skos:Concept;
+skos:prefLabel "Nichtessbare Früchte"@de, "inedible fruits"@en;
+skos:inScheme ex:Fruechte;
+skos:topConceptOf ex:Fruechte
+.
+
+<http://creativecommons.org/publicdomain/zero/1.0/> a dct:LicenseDocument;
+    dct:title "Creative Commons Zero v1.0 Universal"@en; 
+    skos:prefLabel "Creative Commons Zero v1.0 Universal"@en; .
